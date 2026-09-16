@@ -3,6 +3,8 @@ version: '3.8'
 services:
   db:
     image: mysql:8.1
+    env_file:
+      - stack.env
     volumes:
       - db_data:/var/lib/mysql
     environment:
@@ -16,6 +18,8 @@ services:
 
   wordpress:
     image: wordpress:php8.2
+    env_file:
+      - stack.env
     ports:
       - 8088:80
     volumes:
