@@ -19,7 +19,7 @@ services:
   wordpress:
     image: wordpress:php8.2
     depends_on:
-      db:
+      - db:
         condition: service_healthy
     ports:
       - 8080:80
